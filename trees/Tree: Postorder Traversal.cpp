@@ -1,4 +1,4 @@
-//https://www.hackerrank.com/challenges/tree-preorder-traversal/problem
+//https://www.hackerrank.com/challenges/tree-postorder-traversal/problem
 #include <iostream>
 
 class Node
@@ -15,13 +15,13 @@ public:
     }
 };
 
-void preOrder(Node *root)
+void postOrder(Node *root)
 {
     if (!root)
     {
         return;
     }
+    postOrder(root->left);
+    postOrder(root->right);
     std::cout << root->data << " ";
-    preOrder(root->left);
-    preOrder(root->right);
 }
